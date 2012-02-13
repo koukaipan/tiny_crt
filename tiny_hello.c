@@ -10,20 +10,11 @@ void print(char* s)
 			:"rdx", "rcx", "rbx");
 }
 
-void exit(int exit_code)
-{
-	asm (	"movl %0, %%ebx	\n\t"
-			"movq $1, %%rax		\n\t"
-			"int $0x80			\n\t"
-			:
-			:"r"(exit_code)
-			:);
-}
-
-void my_main()
+int main(int argc, char* argv[])
 {
 	char* str = "hello world without stdlibc\n";
 	print(str);
-	exit(42);
+	
+	return 0;
 }
 
