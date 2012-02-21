@@ -5,10 +5,10 @@ CC = gcc
 CPP = g++
 LD = ld
 # 編譯時期想要 define 的變數(-D變數) 或 include 的目錄(-I目錄)
-CFLAGS = -Wall -fno-builtin
+CFLAGS = -Wall -fno-builtin -fno-stack-protector -g
 
 # 連結時要搜尋 LIBS 的目錄(-L目錄)
-LDFLAGS = -nostdlig -nodefaultlibs
+LDFLAGS = -nostdlib -nodefaultlibs
 
 # 要連結的函式庫(-l函式庫)
 LIBS =
@@ -21,7 +21,7 @@ LIBS =
 PROG = tiny_hello
 
 # 專案中所有要編譯原始碼的目的檔
-OBJS = crt.o tiny_hello.o
+OBJS = unistd.o crt.o tiny_hello.o
 
 #######################################################################
 # Make Rules
