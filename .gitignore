@@ -1,0 +1,4 @@
+*.o
+*.swp
+tiny_hello
+a.out
